@@ -1,8 +1,9 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Gpm.Ui;
 
-public class UI_AchievementSlot : MonoBehaviour
+public class UI_AchievementSlot : InfiniteScrollItem
 {
     public TextMeshProUGUI NameTextUI;
     public TextMeshProUGUI DescriptionTextUI;
@@ -13,6 +14,11 @@ public class UI_AchievementSlot : MonoBehaviour
     public Button RewardClaimButton;
 
     private AchievementDTO _achievementDTO;
+
+    public override void UpdateData(InfiniteScrollData scrollData)
+    {
+        base.UpdateData(scrollData);
+    }
 
     public void Refresh(AchievementDTO achievement)
     {
