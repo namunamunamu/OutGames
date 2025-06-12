@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using Unity.VisualScripting;
 
 public class CurrencyManager : MonoBehaviour
 {
@@ -45,7 +46,7 @@ public class CurrencyManager : MonoBehaviour
 
         _currencies = new Dictionary<ECurrencyType, Currency>();
 
-        List<CurrencyDTO> loadedCurrencies = _repository.LoadCurrencies();
+        List<CurrencyDTO> loadedCurrencies = _repository.LoadCurrencies(AccountManager.Instance.CurrentAccount.Email);
         if (loadedCurrencies == null)
         {
             for (int i = 0; i < (int)ECurrencyType.Count; ++i)
@@ -71,6 +72,11 @@ public class CurrencyManager : MonoBehaviour
                 _currencies.Add(currency.Type, currency);
             }
         }
+
+        foreach (KeyValuePair<ECurrencyType, Currency> kvp in _currencies)
+        {
+            Debug.Log(kvp.Key);
+        }
     }
 
     private List<CurrencyDTO> ToDTOList()
@@ -92,7 +98,7 @@ public class CurrencyManager : MonoBehaviour
             AchievementManager.Instance.Increase(EAchievementCondition.GoldCollect, value);
         }
 
-        _repository.SaveCurrencies(ToDTOList());
+        _repository.SaveCurrencies(ToDTOList(), AccountManager.Instance.CurrentAccount.Email);
 
         OnDataChanged?.Invoke();
     }
@@ -104,7 +110,7 @@ public class CurrencyManager : MonoBehaviour
             return false;
         }
 
-        _repository.SaveCurrencies(ToDTOList());
+        _repository.SaveCurrencies(ToDTOList(), AccountManager.Instance.CurrentAccount.Email);
 
         OnDataChanged?.Invoke();
         return true;

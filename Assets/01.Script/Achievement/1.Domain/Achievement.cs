@@ -7,6 +7,7 @@ public enum EAchievementCondition
     DronKillCount,
     BossKillCount,
     PlayTime,
+    PlayDate,
     Tirgger,
 
 }
