@@ -17,4 +17,4 @@ MonoBehaviour:
   BasicSpawnTime: 7
   BasicSpawnAmount: 1
   BasicHPAmount: 100
-  ThresholdTime: 180
+  ThresholdTime: 2

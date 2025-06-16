@@ -14,6 +14,13 @@ public class Stage
          StageNumber = number;   
    }
 
+   public Stage(StageDTO stageDTO)
+   {
+      StageNumber = stageDTO.StageNumber;
+      CurrentStageLevel = new StageLevel(stageDTO.CurrentStageLevel);
+      _index = (int)stageDTO.CurrentStageLevel.StageLevelType;
+   }
+   
    public void AddStageLevel(StageLevelSO stageLevelSO)
    {
       StageLevel stagelevel = new StageLevel(stageLevelSO);

@@ -29,6 +29,15 @@ public class StageLevel
     public float SpawnTime;
     public float HPAmount;
     public int SpawnAmount;
+
+    public StageLevel(StageLevelDTO stageLevelDTO)
+    {
+        StageLevelType = stageLevelDTO.StageLevelType;
+        SpawnTime = stageLevelDTO.SpawnTime;
+        HPAmount = stageLevelDTO.HPAmount; 
+        SpawnAmount = stageLevelDTO.SpawnAmount;
+        
+    }
     
     public StageLevel(StageLevelSO stageLevelSO)
     {

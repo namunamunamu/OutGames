@@ -4,21 +4,30 @@ using UnityEngine;
 public class StageRepo
 {
 
-    public StageSaveData Save()
+    public void Save()
     {
-     StageSaveData stageSaveData = new StageSaveData();
-     
+
+       StageDTO dto = StageManager.instance.GetCurrentStageDTO();
+     StageSaveData stageSaveData = new StageSaveData(dto);
+     string jsonString = JsonUtility.ToJson(stageSaveData);
+     PlayerPrefs.SetString("StageSave", jsonString);
     }
 
-    public StageDTO Load(StageSaveData saveData)
+    public StageDTO Load()
     {
-        
+        string json = PlayerPrefs.GetString("StageSave");
+        StageDTO dto = JsonUtility.FromJson<StageDTO>(json);
+        return dto;
     }
 }
 
 [Serializable]
 public struct StageSaveData
 {
-    public int StageNumber;
-    public 
+    public StageDTO DTO;
+
+    public StageSaveData(StageDTO dto)
+    {
+        DTO = dto;
+    }
 }

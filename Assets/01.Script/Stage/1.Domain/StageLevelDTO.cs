@@ -10,6 +10,8 @@ public class StageLevelDTO
     public float HPAmount;
     public int SpawnAmount;
 
+    
+    
     public StageLevelDTO(StageLevel stageLevel)
     {
         StageLevelType = stageLevel.StageLevelType;
