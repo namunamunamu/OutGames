@@ -15,6 +15,7 @@ public class AttendanceManager : MonoBehaviour
 
     private int _currentAttendanceDate;
     private int _rewardClaimedAttendanceDate;
+    private DateTime _lastConnectDateTime;
 
 
 
@@ -42,16 +43,22 @@ public class AttendanceManager : MonoBehaviour
         AttendanceSaveData loadedData = _repository.Load(AccountManager.Instance.CurrentAccount.Email);
         if (loadedData == null)
         {
-            _currentAttendanceDate = 1;
             _rewardClaimedAttendanceDate = 0;
+            _currentAttendanceDate = 1;
         }
         else
         {
-            _currentAttendanceDate = ++loadedData.LastAttendanceDate;
             _rewardClaimedAttendanceDate = loadedData.RewardClaimedAttendanceDate;
+
+            DateTime currentDateTime = DateTime.Now;
+            if (loadedData.LastConnectDateTime.Date.Day != currentDateTime.Date.Day)
+            {
+                _currentAttendanceDate = ++loadedData.LastAttendanceDate;
+            }
         }
 
-        _repository.Save(_currentAttendanceDate, _rewardClaimedAttendanceDate, AccountManager.Instance.CurrentAccount.Email);
+        _repository.Save(_currentAttendanceDate, _rewardClaimedAttendanceDate, _lastConnectDateTime, AccountManager.Instance.CurrentAccount.Email);
+
         InitAttendanceRewards();
     }
 
@@ -89,7 +96,7 @@ public class AttendanceManager : MonoBehaviour
         // 보상 받은 출석일자 업데이트
         _rewardClaimedAttendanceDate = desireAttendance.AttendanceDate;
 
-        _repository.Save(_currentAttendanceDate, _rewardClaimedAttendanceDate, AccountManager.Instance.CurrentAccount.Email);
+        _repository.Save(_currentAttendanceDate, _rewardClaimedAttendanceDate, _lastConnectDateTime, AccountManager.Instance.CurrentAccount.Email);
 
         OnDataChanged?.Invoke();
         return true;

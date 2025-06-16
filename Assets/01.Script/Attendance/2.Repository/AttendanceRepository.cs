@@ -4,7 +4,7 @@ using UnityEngine;
 public class AttendanceRepository : MonoBehaviour
 {
     private const string SAVE_KEY = nameof(AttendanceRepository);
-    public void Save(int currentAttendanceDate, int rewardClaimedAttendanceDate, string userID)
+    public void Save(int currentAttendanceDate, int rewardClaimedAttendanceDate, DateTime lastConnectDateTime, string userID)
     {
         AttendanceSaveData saveData = new AttendanceSaveData(currentAttendanceDate, rewardClaimedAttendanceDate);
         string json = JsonUtility.ToJson(saveData);
@@ -30,6 +30,7 @@ public class AttendanceSaveData
 {
     public int LastAttendanceDate;
     public int RewardClaimedAttendanceDate;
+    public DateTime LastConnectDateTime;
 
     public AttendanceSaveData(int currentAttendanceDate, int rewardClaimedAttendanceDate)
     {

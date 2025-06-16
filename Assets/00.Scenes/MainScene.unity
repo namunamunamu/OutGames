@@ -398,6 +398,7 @@ GameObject:
   - component: {fileID: 247501685}
   - component: {fileID: 247501684}
   - component: {fileID: 247501683}
+  - component: {fileID: 247501686}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -421,8 +422,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 1000, y: 900}
+  m_AnchoredPosition: {x: 0, y: -0.00024414062}
+  m_SizeDelta: {x: 1000, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &247501683
 MonoBehaviour:
@@ -488,6 +489,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247501681}
   m_CullTransparentMesh: 1
+--- !u!114 &247501686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247501681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!4 &257359985 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2141676431450117668, guid: cd17687759887a0438ee021e51abc9d9,
@@ -772,7 +787,6 @@ GameObject:
   - component: {fileID: 612014565}
   - component: {fileID: 612014564}
   - component: {fileID: 612014563}
-  - component: {fileID: 612014566}
   m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
@@ -868,43 +882,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612014561}
   m_CullTransparentMesh: 1
---- !u!114 &612014566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612014561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10837ee7ec97f6d48b4db00e8ee75cba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onChangeValue:
-    m_PersistentCalls:
-      m_Calls: []
-  onChangeActiveItem:
-    m_PersistentCalls:
-      m_Calls: []
-  onStartLine:
-    m_PersistentCalls:
-      m_Calls: []
-  onEndLine:
-    m_PersistentCalls:
-      m_Calls: []
-  needItemCount: 0
-  itemPrefab: {fileID: 3890577659304306302, guid: 3067fad3b68011c4db3e661b24739c3e,
-    type: 3}
-  dynamicItemSize: 0
-  layout:
-    axis: 1
-    padding: {x: 0, y: 0}
-    space: {x: 0, y: 0}
-    topToBotton: 1
-    leftToRight: 1
-    values: []
-  padding: 0
-  space: 0
 --- !u!1 &620890166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2712,7 +2689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1332397531
 RectTransform:
   m_ObjectHideFlags: 0
