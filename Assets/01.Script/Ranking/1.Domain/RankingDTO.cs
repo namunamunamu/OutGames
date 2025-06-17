@@ -1,16 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class RankingDTO : MonoBehaviour
+public class RankingDTO
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public readonly List<RankDTO> RankingList;
+    public readonly RankDTO PlayerRank;
 
-    // Update is called once per frame
-    void Update()
+    public RankingDTO(List<RankDTO> ranking)
     {
-        
+        RankingList = ranking;
     }
 }
