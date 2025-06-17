@@ -25,7 +25,6 @@ public class StageRepo
 public struct StageSaveData
 {
     public StageDTO DTO;
-
     public StageSaveData(StageDTO dto)
     {
         DTO = dto;

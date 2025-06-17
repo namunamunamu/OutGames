@@ -19,8 +19,12 @@ public class StageLevel
 {
     public StageLevelSO StageLevelSO;
     public ELevels StageLevelType;
-    private float _stageThreshholdTime;
-    public float StageThreshholdTime => _stageThreshholdTime;
+    private float _stageStartTime;
+    private float _stageEndTime;
+
+    
+    public float StageStartTime => _stageStartTime;
+    public float StageEndTime => _stageEndTime;
     
     private float _difficultyMultiplyer;
     private float _basicSpawnTime;
@@ -42,15 +46,16 @@ public class StageLevel
     public StageLevel(StageLevelSO stageLevelSO)
     {
         StageLevelSO = stageLevelSO;
-        _stageThreshholdTime = stageLevelSO.ThresholdTime;
+        _stageStartTime = stageLevelSO.StartTime;
+        _stageEndTime = stageLevelSO.EndTime;
         _difficultyMultiplyer = stageLevelSO.DifficultyMultiplier;
         _basicSpawnTime = stageLevelSO.BasicSpawnTime;
         _basicHPAmount = stageLevelSO.BasicHPAmount;
         StageLevelType = stageLevelSO.StageLevelType;
         
-        SpawnTime = GetSpawnTime(_stageThreshholdTime);
-        SpawnAmount = GetSpawnAmount(_stageThreshholdTime);
-        HPAmount = GetHPAmount(_stageThreshholdTime);
+        SpawnTime = GetSpawnTime(_stageEndTime);
+        SpawnAmount = GetSpawnAmount(_stageEndTime);
+        HPAmount = GetHPAmount(_stageEndTime);
 
     }
     

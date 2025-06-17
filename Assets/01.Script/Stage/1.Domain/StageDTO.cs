@@ -9,6 +9,7 @@ public class StageDTO
 
     public StageDTO(Stage stage)
     {
+        
         StageNumber = stage.StageNumber;
         CurrentStageLevel = new StageLevelDTO(stage.CurrentStageLevel);
     }

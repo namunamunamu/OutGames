@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "StageLevelSO", menuName = "StageLevel")]
 public class StageLevelSO : ScriptableObject
@@ -8,5 +9,6 @@ public class StageLevelSO : ScriptableObject
     public float BasicSpawnTime;
     public int BasicSpawnAmount;
     public float BasicHPAmount;
-    public float ThresholdTime;
+    public float StartTime;
+    public float EndTime;
 }

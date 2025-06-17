@@ -41,7 +41,7 @@ private StageRepo _stageRepo = new StageRepo();
       else
       {
          _stage = new Stage(_stageRepo.Load());
-         _timer = _stage.CurrentStageLevel[]
+         _timer = _stage.CurrentStageLevel.StageStartTime;
       }
       
       
@@ -64,8 +64,10 @@ private StageRepo _stageRepo = new StageRepo();
    void Check()
    {
       if (!_stage.TryCheckStageLevel(_timer)) return;
-      _stageRepo.Save();
+      
       OnStageLevelChanged?.Invoke();
+      _stageRepo.Save();
+      
       Debug.Log("바뀜");
 
    }

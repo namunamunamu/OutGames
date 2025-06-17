@@ -35,7 +35,7 @@ public class Stage
          CurrentStageLevel = _stageLevels[_index];
       }
       
-      float threshholdTime = CurrentStageLevel.StageThreshholdTime;
+      float threshholdTime = CurrentStageLevel.StageEndTime;
       if (time >= threshholdTime)
       {
          

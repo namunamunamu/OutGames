@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [System.Serializable]
 public class StageLevelDTO
 {
-    public ELevels StageLevelType;      
-    public float ThresholdTime;
+    public ELevels StageLevelType;
+    public float StartTime;
+    public float EndTime;
 
     public float SpawnTime;
     public float HPAmount;
@@ -15,7 +17,8 @@ public class StageLevelDTO
     public StageLevelDTO(StageLevel stageLevel)
     {
         StageLevelType = stageLevel.StageLevelType;
-        ThresholdTime = stageLevel.StageThreshholdTime;
+        StartTime = stageLevel.StageStartTime;
+        EndTime = stageLevel.StageEndTime;
         
 
         SpawnTime = stageLevel.SpawnTime;
