@@ -34,7 +34,7 @@ public class RankRepository
         {
             RankList[playerIndex] = PlayerRank;
         }
-        RankList.Sort();
+        RankList.Sort((RankDTO a, RankDTO b) => b.Score.CompareTo(a.Score));
         SaveServerData();
     }
 
@@ -56,7 +56,7 @@ public class RankRepository
         PlayerPrefs.SetString(SAVE_SERVER_KEY, json);
     }
 
-    private List<RankDTO> LoadServerData()
+    public List<RankDTO> LoadServerData()
     {
         List<RankDTO> loadedData = new List<RankDTO>();
         if (PlayerPrefs.HasKey(SAVE_SERVER_KEY))
@@ -69,13 +69,15 @@ public class RankRepository
             for (int i = 0; i < 30; i++)
             {
                 RankDTO rank = new RankDTO(i * 100, 0, $"Tester{i}");
-                RankList.Add(rank);
+                loadedData.Add(rank);
             }
         }
         return loadedData;
     }
 }
 
+
+[Serializable]
 public class ServerSaveData
 {
     public List<RankDTO> RankList;

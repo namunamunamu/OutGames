@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+[Serializable]
 public class RankDTO 
 {
    public readonly int Score;

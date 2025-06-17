@@ -48,6 +48,7 @@ public class Rank
       _nickname = nickname;
    }
    
+   public Rank(RankDTO dto) : this(dto.Score, dto.RankNumber, dto.Nickname) { }
    
    public RankDTO ToDTO()
    {

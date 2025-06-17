@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AccountDTO : MonoBehaviour
+public class AccountDTO 
 {
     public string Email;
     public string Nickname;
