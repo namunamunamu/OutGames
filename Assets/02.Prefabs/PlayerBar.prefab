@@ -581,3 +581,9 @@ MonoBehaviour:
   Score_Text: {fileID: 8388916459288976486}
   RankNumber_Text: {fileID: 5113750354940596456}
   RankIcon_Image: {fileID: 7128720727629119356}
+  rankSprites:
+  - {fileID: 21300000, guid: 6448011b459a14b05969ad3bf1a44890, type: 3}
+  - {fileID: 21300000, guid: ddff50e8139db4a99976adb5f40c79f0, type: 3}
+  - {fileID: 21300000, guid: 50b2c32ff3de94988a61633cb19060de, type: 3}
+  - {fileID: 21300000, guid: bbe8d33a81a0549ce8ab1cee4aa7db2a, type: 3}
+  - {fileID: 21300000, guid: d88311d2ea92740ed9e0274f02825ccf, type: 3}

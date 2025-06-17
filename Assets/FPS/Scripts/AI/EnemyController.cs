@@ -374,7 +374,7 @@ namespace Unity.FPS.AI
 
             CurrencyManager.Instance.AddCurrency(ECurrencyType.Gold, 100);
             AchievementManager.Instance.Increase(EAchievementCondition.DronKillCount, 1);
-
+            RankManager.Instance.PlayerRank.AddScore(10);
             // this will call the OnDestroy function
             Destroy(gameObject, DeathDuration);
 
