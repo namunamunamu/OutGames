@@ -1,14 +1,24 @@
 
 public class AttendanceRewardDTO
 {
-    public readonly int AttendanceDate;
-    public readonly CurrencyDTO RewardCurrency;
+    public readonly ECurrencyType RewardCurrencyType;
+    public readonly int RewardCurrencyAmount;
     public bool IsClaimed;
+    public bool CanClaim;
 
-    public AttendanceRewardDTO(AttendanceReward attendanceReward)
+    public AttendanceRewardDTO(ECurrencyType currencyType, int rewardCurrencyAmount, bool isClaimed, bool canClaim)
     {
-        AttendanceDate = attendanceReward.AttendanceDate;
-        RewardCurrency = attendanceReward.RewardCurrency;
+        RewardCurrencyType = currencyType;
+        RewardCurrencyAmount = rewardCurrencyAmount;
+        IsClaimed = isClaimed;
+        CanClaim = canClaim;
+    }
+
+    public AttendanceRewardDTO(AttendanceReward attendanceReward, bool canClaim)
+    {
+        RewardCurrencyType = attendanceReward.CurrencyType;
+        RewardCurrencyAmount = attendanceReward.Amount;
         IsClaimed = attendanceReward.IsClaimed;
+        CanClaim = canClaim;
     }
 }

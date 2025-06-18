@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a23ac825eadcad4cb4fb0285c9451bb, type: 3}
   m_Name: AttendanceRewardSO 5
   m_EditorClassIdentifier: 
-  AttendanceDate: 5
-  CurrencyType: 0
-  CurrencyAmount: 500
+  _currencyType: 0
+  _currencyAmount: 500
