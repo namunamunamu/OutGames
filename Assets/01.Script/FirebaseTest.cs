@@ -85,7 +85,8 @@ public class FirebaseTest : MonoBehaviour
 
         NickNameChange();
         AddRanking();
-        GetMyRank();
+        // GetMyRank();
+        GetRankings();
     }
 
     public void GetProfile()
@@ -165,6 +166,27 @@ public class FirebaseTest : MonoBehaviour
             else
             {
                 Debug.Log($"Document {snapshot.Id} does not exist!");
+            }
+        });
+    }
+
+    private void GetRankings()
+    {
+        Query allRankingsQuery = _db.Collection("rankings").OrderByDescending("Score");
+        allRankingsQuery.GetSnapshotAsync().ContinueWithOnMainThread(task =>
+        {
+            QuerySnapshot allRankingsQuerySnapshot = task.Result;
+        
+            foreach (DocumentSnapshot documentSnapshot in allRankingsQuerySnapshot.Documents)
+            {
+                Debug.Log($"Document data for {documentSnapshot.Id} document:");
+                Dictionary<string, object> city = documentSnapshot.ToDictionary();
+                foreach (KeyValuePair<string, object> pair in city)
+                {
+                    Debug.Log($"{pair.Key}: {pair.Value}");
+                }
+
+                Debug.Log("");
             }
         });
     }
