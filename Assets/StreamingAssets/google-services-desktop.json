@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "119994207762",
+    "project_id": "fir-practice-d22f9",
+    "storage_bucket": "fir-practice-d22f9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119994207762:android:4b8b7c8fc7152eafc352cb",
+        "android_client_info": {
+          "package_name": "com.skku.outgame"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbdh9bQIAgeQpEwyHhDiN7NI8MbaWzyrY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
