@@ -1,9 +1,5 @@
-using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
 
 
 
@@ -36,7 +32,8 @@ public class RankUI : MonoBehaviour
       {
          Top20s_Bar[i].Refresh(Top20s[i].Nickname, Top20s[i].Score, i+1);
       }
-      
+
+      PlayerDTO = RankManager.Instance.PlayerRank.ToDTO();
       playerBarUI.Refresh(PlayerDTO.Nickname, PlayerDTO.Score, PlayerDTO.RankNumber);
    }
 }

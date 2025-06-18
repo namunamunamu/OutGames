@@ -37,8 +37,8 @@ public class RankBar_UI : MonoBehaviour
     public void Refresh(string nickname, int score, int rankNumber)
     {
         Nickname_Text.text = nickname;
-        Score_Text.text = score.ToString();
-        RankNumber_Text.text = rankNumber.ToString();
+        Score_Text.text = score.ToString("N1");
+        RankNumber_Text.text = rankNumber.ToString("N0");
 
         CrownImage crownImage;
 

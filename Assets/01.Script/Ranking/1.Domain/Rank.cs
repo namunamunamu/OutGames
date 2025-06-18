@@ -52,7 +52,6 @@ public class Rank
    
    public RankDTO ToDTO()
    {
-      
       return new RankDTO(_score, _rankNumber, _nickname);
    }
 }

@@ -25,7 +25,7 @@ public class RankRepository
 
         PlayerRank = playerRank;
         Debug.Log($"{playerRank.Nickname} :: {playerRank.Score}점 / {playerRank.RankNumber}등");
-        Debug.Log($"{PlayerRank.Nickname} :: {PlayerRank.Score}점 / {PlayerRank.RankNumber}등");
+        
 
         int playerIndex = RankList.FindIndex(x => x.Nickname == PlayerRank.Nickname);
         if (playerIndex == -1)
@@ -106,9 +106,10 @@ public class ServerSaveData
     public ServerSaveData(List<RankDTO> rankList)
     {
         RankList = new List<SaveData>();
-        foreach (RankDTO rankDTO in rankList)
+        for (int i = 0; i < rankList.Count; i++)
         {
-            SaveData saveData = new SaveData(rankDTO);
+            SaveData saveData = new SaveData(rankList[i]);
+            saveData.RankNumber = i + 1;
             RankList.Add(saveData);
         }
     }
